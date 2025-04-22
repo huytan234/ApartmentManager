@@ -1,0 +1,45 @@
+version: '3.8'
+services:
+  django:
+    build: .
+    container_name: django-container
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    networks:
+      - backend
+    environment:
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_NAME: apartmentmanager
+      DB_USER: tan
+      DB_PASSWORD: Admin@123
+
+  mysql:
+    image: mysql:8.0.18
+    container_name: django-mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: Admin@123
+      MYSQL_DATABASE: apartmentmanager
+      MYSQL_USER: tan
+      MYSQL_PASSWORD: Admin@123
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - mysql-config:/etc/mysql/conf.d
+      - D:/DOAN/ApartmentManager/apartmentmanager/data.sql:/docker-entrypoint-initdb.d/data.sql
+    networks:
+      - backend
+
+networks:
+  backend:
+    name: apartment-network
+
+volumes:
+  mysql-data:
+  mysql-config:

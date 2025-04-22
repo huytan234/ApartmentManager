@@ -1,0 +1,107 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 10px;
+  }
+  
+  .message-list {
+    flex: 1;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .message {
+    margin: 5px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    max-width: 80%;
+  }
+  
+  .message-sent {
+    align-self: flex-end;
+    background-color: #d1ffd1;
+  }
+  
+  .message-received {
+    align-self: flex-start;
+    background-color: #f1d1d1;
+  }
+  
+  .message-time {
+    font-size: 12px;
+    color: #888;
+  }
+  
+  .message-username {
+    font-weight: bold;
+  }
+  
+  .message-text {
+    margin-top: 5px;
+  }
+  
+  .input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  
+  .message-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+  
+  .send-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .send-button:hover {
+    background-color: #0056b3;
+  }
+  /* Đặt footer luôn nằm ở cuối trang */
+.footer3 {
+  background-color: #296571;
+  color: #ffffff;
+  padding: 20px 0;
+  position:absolute;
+  bottom: 0%;
+  width: 100%;
+}
+
+.registration-background {
+  background-image: url('https://images.pexels.com/photos/1029618/pexels-photo-1029618.jpeg');
+  background-size: cover; 
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh; 
+ 
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px; 
+  position: relative; 
+  overflow: hidden; 
+}
+
+.registration-background::before {
+  content: ''; 
+  position: absolute; 
+  top: 0;
+  left: 0; 
+  width: 100%;
+  height: 100%; 
+  background: rgba(0, 0, 0, 0.5); 
+  z-index: -1; 
+}
+.text-black {
+  color: black;
+}
